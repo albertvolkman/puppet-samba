@@ -1,7 +1,8 @@
 #!/bin/bash
+# Load users in the admin group and add them to samba.  Default password is the same as the username.
 
 USERS="$(cat /etc/group | awk 'BEGIN {FS=":"} $1~/^admin/ {print $4}' | awk 'BEGIN {RS=","} {print $0}')"
 for u in $USERS
 do
-        printf "$u\n$u\n" | smbpasswd -a -s $u
+    printf "$u\n$u\n" | smbpasswd -a -s $u
 done
