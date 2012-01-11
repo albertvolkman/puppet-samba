@@ -7,8 +7,6 @@
 #
 class samba {
 
-    include generic
-
     package { "samba-common": }
 
 } # class samba
