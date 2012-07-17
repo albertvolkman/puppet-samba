@@ -1,7 +1,7 @@
 [global]
-     workgroup = DEV
+     workgroup = <%= fqdn[2,15] %>
      server string = %h server (Samba, Ubuntu)
-     netbios name = <%= fqdn %>
+     netbios name = <%= fqdn[2,15] %>
      dns proxy = no
      log file = /var/log/samba/log.%m
      max log size = 10000
