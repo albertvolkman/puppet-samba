@@ -34,7 +34,7 @@ class samba::server inherits samba {
     }
 
     exec { "reload-samba":
-         command => "/sbin/restart smbd",
+         command => "/sbin/restart smbd; /sbin/restart nmbd",
          refreshonly => true,
     }
 
